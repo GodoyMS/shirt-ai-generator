@@ -54,7 +54,7 @@ const Home = () => {
 
                 </motion.div>
                 <motion.div className=" inline-flex gap-2 w-full text-gray-500" {...slideAnimation('up')}>
-                    Developed by<a className="text-slate-800" ref={"https://www.linkedin.com/in/godoy-liam-solorzano/"} target="_blank">Godoy Muñoz</a> 
+                    Developed by<a className="text-slate-800" href={"https://www.linkedin.com/in/godoy-liam-solorzano/"} target="_blank">Godoy Muñoz</a> 
 
                 </motion.div>
             </motion.section>
