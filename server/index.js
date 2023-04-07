@@ -15,7 +15,7 @@ setInterval(() => {
   }).on('error', (err) => {
     console.error(`Ping error: ${err.message}`);
   });
-}, 3000);
+}, 30000);
 
 
 const app = express();

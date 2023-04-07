@@ -226,7 +226,7 @@ const Customizer = () => {
             
             <DownloadTab 
               tab={DownloadTabData}
-              handleClick={()=>CanvasToImage()}
+              handleClick={()=>downloadCanvasToImage()}
             />
           </motion.div>
         </>

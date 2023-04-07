@@ -17,21 +17,23 @@ const Home = () => {
     <AnimatePresence>
         {snap.intro && (
             <motion.section className="home" {...slideAnimation('left')}>
-                <motion.header {...slideAnimation('down')}>
+                <motion.header className=" inline-flex gap-2" {...slideAnimation('down')}>
                     <img  
-                    src="./threejs.png"
+                    src="./github.png"
                     alt="logo"
                     className="w-8 h-8  object-contain"
                     />
+                    <a href="https://github.com/GodoyMS/shirt-ai-generator" target="_blank" className="text-gray-500 text-base rounded-md bg-slate-200 p-2 hover:bg-slate-300 cursor-pointer">Star it on Github</a>
+
 
                 </motion.header>
                 <motion.div className="home-content"
                 {...headContainerAnimation}>
                     <motion.div {...headTextAnimation}>
-                        <h1 className="head-text">
-                            LET'S  <br className="xl:block hidden"/>
-                            DO IT
-                        </h1>
+                        <h2 className="head-text">
+                            3D SHIRT DESING <br className="xl:block hidden"/>
+                            GENERATOR
+                        </h2>
 
                     </motion.div>
                     <motion.div
@@ -39,16 +41,20 @@ const Home = () => {
                      className="flex flex-col gap-5"
                     >
                             <p className="max-w-md font-normal text-gray-600 text-base">
-                                        Create your unique and exclusive shirt with our brand-new 3D customization tool. <strong>Unleash your imagination</strong>{" "} and define your own style.
+                                        Create a 3D shirt and customize it as you want. <strong>Powered by OpenAI image generator API.</strong>{" "}
                         </p>                        <CustomButton 
                             type="filled"
-                            title="Customize it"
+                            title="Playground"
                             handleClick={()=>state.intro=false}
                             customStyles="w-fit px-4 py-2.5 font-bold text-sm"
 
                         
                         />
                     </motion.div>
+
+                </motion.div>
+                <motion.div className=" inline-flex gap-2 w-full text-gray-500" {...slideAnimation('up')}>
+                    Developed by<a className="text-slate-800" ref={"https://www.linkedin.com/in/godoy-liam-solorzano/"} target="_blank">Godoy Muñoz</a> 
 
                 </motion.div>
             </motion.section>
