@@ -15,7 +15,7 @@ app.use("/api/v1/dalle", dalleRoutes);
 //keeep server alive
 
 setInterval(() => {
-  http.get('/monitor',(req, res) => {
+  app.get('/monitor',(req, res) => {
     res.status(200).json({ message: "Server alive" })
   })
 }, 300000);
