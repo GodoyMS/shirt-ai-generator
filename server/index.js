@@ -4,19 +4,18 @@ import cors from 'cors';
 
 import dalleRoutes from './routes/dalle.routes.js';
 
-import http from 'http'
-
+import https from 'https';
 
 dotenv.config();
 //keeep server alive
 
 setInterval(() => {
-  http.get('https://shirt-ai-generator-backend.onrender.com/', (res) => {
+  https.get('https://shirt-ai-generator-backend.onrender.com/', (res) => {
     console.log(`Ping status: ${res.statusCode}`);
   }).on('error', (err) => {
     console.error(`Ping error: ${err.message}`);
   });
-}, 30);
+}, 30000);
 
 
 const app = express();
@@ -34,7 +33,7 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: "Hello from DALL.E" })
 })
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 
 
 server.listen(8080, () => console.log('Server has started on port 8080'))
