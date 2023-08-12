@@ -64,19 +64,24 @@ const Customizer = () => {
     try {
       setGeneratingImg(true);
 
-      const response = await fetch('https://shirt-ai-generator-backend.onrender.com/api/v1/dalle', {
+      const response = await fetch('https://api.openai.com/v1/images/generations', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization':'Bearer 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 '
         },
         body: JSON.stringify({
           prompt,
+          size:"1024x1024",
+          n:1,
+          response_format:"b64_json"
         })
       })
 
       const data = await response.json();
+      console.log(data)
 
-      handleDecals(type, `data:image/png;base64,${data.photo}`)
+      handleDecals(type, `data:image/png;base64,${data.data[0].b64_json}`)
     } catch (error) {
       alert(error)
     } finally {

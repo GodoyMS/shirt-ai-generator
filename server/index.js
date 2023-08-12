@@ -10,12 +10,18 @@ dotenv.config();
 //keeep server alive
 
 setInterval(() => {
-  http.get('http://shirt-ai-generator-backend.onrender.com/ping', (res) => {
-    console.log(`Ping status: ${res.statusCode}`);
-  }).on('error', (err) => {
-    console.error(`Ping error: ${err.message}`);
+  fetch('https://shirt-ai-generator-backend.onrender.com/ping')
+  .then(response => {
+    if (response.ok) {
+      console.log('Ping successful');
+    } else {
+      console.error(`Ping failed with status code ${response.status}`);
+    }
+  })
+  .catch(error => {
+    console.error('Ping failed:', error);
   });
-}, 300000);
+}, 3000);
 
 
 const app = express();
