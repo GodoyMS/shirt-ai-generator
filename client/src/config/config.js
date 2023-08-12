@@ -1,3 +1,6 @@
+
+const apiKey = import.meta.env.OPENAI_API_KEY;
+
 const config = {
   development: {
     backendUrl: "https://shirt-ai-generator-backend.onrender.com/api/v1/dalle",
@@ -5,6 +8,7 @@ const config = {
   production: {
     backendUrl: "https://devswag.onrender.com/api/v1/dalle",
   },
+  apikeyOpenAI:apiKey
 };
 
 export default config;

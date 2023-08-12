@@ -12,9 +12,10 @@ import { AIPicker, ColorPicker, CustomButton, DirectionTab, FilePicker, Tab,Down
 
 const Customizer = () => {
   const snap = useSnapshot(state);
+  const apiKey = import.meta.env.OPENAI_API_KEY;
+
 
   const [file, setFile] = useState('');
-
   const [prompt, setPrompt] = useState('');
   const [generatingImg, setGeneratingImg] = useState(false);
 
@@ -68,7 +69,7 @@ const Customizer = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization':'Bearer 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 '
+          'Authorization':'Bearer '+apiKey
         },
         body: JSON.stringify({
           prompt,
