@@ -12,7 +12,7 @@ import { AIPicker, ColorPicker, CustomButton, DirectionTab, FilePicker, Tab,Down
 
 const Customizer = () => {
   const snap = useSnapshot(state);
-  const apiKey = import.meta.env.OPENAI_API_KEY;
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
 
   const [file, setFile] = useState('');
