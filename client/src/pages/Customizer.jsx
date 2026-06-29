@@ -72,17 +72,16 @@ const Customizer = () => {
           'Authorization':'Bearer '+apiKey
         },
         body: JSON.stringify({
-          model:"dall-e-3",
+          model:"gpt-image-1",
           prompt,
           size:"1024x1024",
-          n:1,
         })
       })
 
       const data = await response.json();
       console.log(data)
 
-      handleDecals(type, data.data[0].url)
+      handleDecals(type, `data:image/png;base64,${data.data[0].b64_json}`)
     } catch (error) {
       alert(error)
     } finally {
