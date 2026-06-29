@@ -20,6 +20,6 @@
     "firebase": "^9.19.1",
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22",
-    "openai": "^3.3.0"
+    "openai": "^4.104.0"
   }
 }
