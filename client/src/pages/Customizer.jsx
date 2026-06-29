@@ -72,6 +72,7 @@ const Customizer = () => {
           'Authorization':'Bearer '+apiKey
         },
         body: JSON.stringify({
+          model:"dall-e-3",
           prompt,
           size:"1024x1024",
           n:1,
